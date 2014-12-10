@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<table border="1">
+	<tr>
+		<th>Name</th>
+		<th>File Name</th>
+		<th>Action</th>
+		
+	</tr>
+
+	<% @images.each do |image| %>
+	<tr>
+		<td><%= image.name %></td>
+		<td><%= image.avatar %></td>
+
+	</tr>
+	<td>
+	<%= link_to 'Edit', edit_image_path(image) %> |
+	<%= link_to 'Back', images_path(image) %>
+	</td>
+	<% end %>
+
+</table>
+
+<%#= link_to 'Edit', edit_image_path(@image) %> 
+<%= link_to 'Back', secondary_description_index_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Countryname:</strong>
+  <%= @legalcountry.countryname %>
+</p>
+
+<p>
+  <strong>Countrypostalcode:</strong>
+  <%= @legalcountry.countrypostalcode %>
+</p>
+
+<p>
+  <strong>Countrycallingcode:</strong>
+  <%= @legalcountry.countrycallingcode %>
+</p>
+
+<p>
+  <strong>Country createdby:</strong>
+  <%= @legalcountry.country_createdby %>
+</p>
+
+<p>
+  <strong>Country modifiedby:</strong>
+  <%= @legalcountry.country_modifiedby %>
+</p>
+
+<%= link_to 'Edit', edit_legalcountry_path(@legalcountry) %> |
+<%= link_to 'Back', legalcountries_path %>

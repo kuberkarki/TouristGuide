@@ -1,0 +1,33 @@
+<%= form_for(@legalmaster) do |f| %>
+  <% if @legalmaster.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@legalmaster.errors.count, "error") %> prohibited this legalmaster from being saved:</h2>
+
+      <ul>
+      <% @legalmaster.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :lmname %><br>
+    <%= f.text_field :lmname %>
+  </div>
+  <div class="field">
+    <%= f.label :lmdesc %><br>
+    <%= f.text_area :lmdesc %>
+  </div>
+  <div class="field">
+    <%= f.label :lmcreatedby %><br>
+    <%= f.number_field :lmcreatedby %>
+  </div>
+  <div class="field">
+    <%= f.label :lmmodifiedby %><br>
+    <%= f.number_field :lmmodifiedby %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

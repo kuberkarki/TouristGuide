@@ -1,0 +1,27 @@
+<%= form_for(@master) do |f| %>
+  <% if @master.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@master.errors.count, "error") %> prohibited this description from being saved:</h2>
+
+      <ul>
+      <% @master.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, :required => true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, :required => true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

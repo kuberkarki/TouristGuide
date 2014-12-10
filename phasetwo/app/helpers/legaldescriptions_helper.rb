@@ -1,0 +1,2 @@
+module LegaldescriptionsHelper
+end

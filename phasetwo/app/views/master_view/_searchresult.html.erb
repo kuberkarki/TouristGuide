@@ -1,0 +1,7 @@
+<% if @master.present? %>
+	<% @master.each do |master| %>
+			<li><%= link_to master.name, master_show_path(master) %></li>
+	<% end %> 
+<% else %>
+	<%= "No Result Found"%>
+<% end %>

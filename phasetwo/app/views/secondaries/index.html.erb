@@ -1,0 +1,40 @@
+<h1>Listing secondaries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Height</th>
+      <th>Width</th>
+      <th>Depth</th>
+      <th>Distance from</th>
+      <th>Distance end</th>
+      <th colspan="3"></th>
+      <th>view description</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @secondaries.each do |secondary| %>
+      <tr>
+        <td><%= secondary.name %></td>
+        <td><%= secondary.description %></td>
+        <td><%= secondary.height %></td>
+        <td><%= secondary.width %></td>
+        <td><%= secondary.depth %></td>
+        <td><%= secondary.distance_from %></td>
+        <td><%= secondary.distance_end %></td>
+        <td><%= link_to 'Show', secondary %></td>
+        <td><%= link_to 'Edit', edit_secondary_path(secondary) %></td>
+        <td><%= link_to 'Destroy', secondary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Add", secondary_description_new_path(secondary) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Secondary', new_secondary_path %>

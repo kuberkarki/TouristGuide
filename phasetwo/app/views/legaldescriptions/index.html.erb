@@ -1,0 +1,29 @@
+<h1>Listing legaldescriptions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ldescription</th>
+      <th>Ldesc createdby</th>
+      <th>Ldesc modifiedby</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @legaldescriptions.each do |legaldescription| %>
+      <tr>
+        <td><%= legaldescription.ldescription %></td>
+        <td><%= legaldescription.ldesc_createdby %></td>
+        <td><%= legaldescription.ldesc_modifiedby %></td>
+        <td><%= link_to 'Show', legaldescription %></td>
+        <td><%= link_to 'Edit', edit_legaldescription_path(legaldescription) %></td>
+        <td><%= link_to 'Destroy', legaldescription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Legaldescription', new_legaldescription_path %>

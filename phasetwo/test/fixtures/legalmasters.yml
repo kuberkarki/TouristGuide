@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lmname: MyString
+  lmdesc: MyText
+  lmcreatedby: 1
+  lmmodifiedby: 1
+
+two:
+  lmname: MyString
+  lmdesc: MyText
+  lmcreatedby: 1
+  lmmodifiedby: 1

@@ -1,0 +1,49 @@
+<h1>Master secondary</h1>
+
+<%= form_for(@secondary, url: master_secondary_create_path) do |f| %>
+  <% if @secondary.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@secondary.errors.count, "error") %> prohibited this secondary from being saved:</h2>
+
+      <ul>
+      <% @secondary.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, :required => true %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, :required => true %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br>
+    <%= f.number_field :height, :required => true %>
+  </div>
+  <div class="field">
+    <%= f.label :width %><br>
+    <%= f.number_field :width, :required => true %>
+  </div>
+  <div class="field">
+    <%= f.label :depth %><br>
+    <%= f.number_field :depth, :required => true %>
+  </div>
+  <div class="field">
+    <%= f.label :distance_from %><br>
+    <%= f.number_field :distance_from, :required => true %>
+  </div>
+  <div class="field">
+    <%= f.label :distance_end %><br>
+    <%= f.number_field :distance_end, :required => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to :back, root_url %>

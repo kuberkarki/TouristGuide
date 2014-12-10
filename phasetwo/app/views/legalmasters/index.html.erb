@@ -1,0 +1,31 @@
+<h1>Listing legalmasters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lmname</th>
+      <th>Lmdesc</th>
+      <th>Lmcreatedby</th>
+      <th>Lmmodifiedby</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @legalmasters.each do |legalmaster| %>
+      <tr>
+        <td><%= legalmaster.lmname %></td>
+        <td><%= legalmaster.lmdesc %></td>
+        <td><%= legalmaster.lmcreatedby %></td>
+        <td><%= legalmaster.lmmodifiedby %></td>
+        <td><%= link_to 'Show', legalmaster %></td>
+        <td><%= link_to 'Edit', edit_legalmaster_path(legalmaster) %></td>
+        <td><%= link_to 'Destroy', legalmaster, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Legalmaster', new_legalmaster_path %>

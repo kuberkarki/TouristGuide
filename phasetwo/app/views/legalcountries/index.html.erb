@@ -1,0 +1,34 @@
+<h1>Listing legalcountries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Countryname</th>
+      <th>Countrypostalcode</th>
+      <th>Countrycallingcode</th>
+      <th>Country createdby</th>
+      <th>Country modifiedby</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @legalcountries.each do |legalcountry| %>
+      <tr>
+        <!--<td><%= check_box_tag "legalcountries[]" %></td> -->    
+        <td><%= legalcountry.countryname %></td>
+        <td><%= legalcountry.countrypostalcode %></td>
+        <td><%= legalcountry.countrycallingcode %></td>
+        <td><%= legalcountry.country_createdby %></td>
+        <td><%= legalcountry.country_modifiedby %></td>
+        <td><%= link_to 'Show', legalcountry %></td>
+        <td><%= link_to 'Edit', edit_legalcountry_path(legalcountry) %></td>
+        <td><%= link_to 'Destroy', legalcountry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Legalcountry', new_legalcountry_path %>

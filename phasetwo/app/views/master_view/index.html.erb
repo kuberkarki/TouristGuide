@@ -1,0 +1,40 @@
+<div id="demo"></div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+<!--   <div class="panel-heading">Panel heading</div>
+  <div class="panel-body">
+    <p>...</p>
+  </div> -->
+
+  <!-- Table -->
+  <table border="1", class="table">
+  		<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Master table count</th>
+		<th>Delete</th>
+		<th>Edit</th>
+		<th>Add new Secondary</th>
+		<th>View All the Secondary Data</th>
+	</tr>
+
+	<% @master.each do |m| %>
+
+
+
+	<tr>
+		<td><%= m.name %></td>
+		<td><%= m.description %></td>
+		<td><%= m.secondaries.count %></td>
+		<td><%= link_to "Delete", masters_delete_path(m), method: :delete, data: { confirm: 'Do you want to delete it ?' } %></td>
+		<td><%= link_to "Edit", master_edit_path(m), class: 'btn btn-info btn-xs'  %></td>
+		<td><%= link_to "Add", master_secondary_new_path(m), class: 'btn btn-info btn-xs' %></td>
+		<td><%= link_to "View", master_secondary_index_path(m), class: 'btn btn-primary btn-xs'  %></td>
+	</tr>	
+
+	<% end %>
+  </table>
+</div>
+
+<%= link_to "Create New Master", master_view_new_path, class: 'btn btn-success' %>

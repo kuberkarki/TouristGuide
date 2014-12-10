@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lmname:</strong>
+  <%= @legalmaster.lmname %>
+</p>
+
+<p>
+  <strong>Lmdesc:</strong>
+  <%= @legalmaster.lmdesc %>
+</p>
+
+<p>
+  <strong>Lmcreatedby:</strong>
+  <%= @legalmaster.lmcreatedby %>
+</p>
+
+<p>
+  <strong>Lmmodifiedby:</strong>
+  <%= @legalmaster.lmmodifiedby %>
+</p>
+
+<%= link_to 'Edit', edit_legalmaster_path(@legalmaster) %> |
+<%= link_to 'Back', legalmasters_path %>

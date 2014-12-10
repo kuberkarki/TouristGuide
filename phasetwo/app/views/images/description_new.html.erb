@@ -1,0 +1,36 @@
+<%= form_for(@image, url: discription_image_create_path, :html => { :multipart => true  }) do |f| %>
+  <% if @image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
+
+      <ul>
+      <% @image.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, :required => true %>
+  </div>
+
+  <p>
+    <label>Images</label>
+    <%= image_tag(@image.avatar_url) if @image.avatar? %>
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %>
+  </p>
+  <p>
+    <label>Images</label>
+    <%= image_tag(@image.avatar_url) if @image.avatar? %>
+    <%= f.file_field :avatar1 %>
+    <%= f.hidden_field :avatar_cache %>
+  </p>
+
+
+  <div class="actions">
+    <%= f.submit  'Add'%>
+  </div>
+<% end %>
